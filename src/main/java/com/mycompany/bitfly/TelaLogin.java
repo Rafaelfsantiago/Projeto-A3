@@ -122,7 +122,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botaoEntrar)
                     .addComponent(botaoDeCadastro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(25, 25, 25))
         );
@@ -141,7 +141,8 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void botaoDeCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeCadastroActionPerformed
-        // TODO add your handling code here:
+        TelaCadastro TelaCadastro = new TelaCadastro();
+        TelaCadastro.setVisible(true);
     }//GEN-LAST:event_botaoDeCadastroActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
