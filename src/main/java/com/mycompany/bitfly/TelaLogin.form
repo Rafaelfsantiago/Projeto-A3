@@ -40,10 +40,12 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="botaoEntrar" min="-2" pref="111" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="botaoCadastrar" min="-2" pref="111" max="-2" attributes="0"/>
+                              <Component id="botaoDeCadastro" min="-2" pref="111" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtSenha" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
-                          <Component id="txtUSuario" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txtUSuario" alignment="0" pref="234" max="32767" attributes="0"/>
+                              <Component id="txtSenha" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -74,7 +76,7 @@
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="botaoEntrar" min="-2" max="-2" attributes="0"/>
-                  <Component id="botaoCadastrar" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoDeCadastro" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -127,7 +129,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoEntrarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="botaoCadastrar">
+    <Component class="javax.swing.JToggleButton" name="botaoDeCadastro">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -135,7 +137,7 @@
         <Property name="text" type="java.lang.String" value="Cadastre-se"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCadastrarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoDeCadastroActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtSenha">

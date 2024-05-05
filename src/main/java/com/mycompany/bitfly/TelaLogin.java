@@ -31,7 +31,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         botaoEntrar = new javax.swing.JToggleButton();
-        botaoCadastrar = new javax.swing.JToggleButton();
+        botaoDeCadastro = new javax.swing.JToggleButton();
         txtSenha = new javax.swing.JPasswordField();
         txtUSuario = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -58,11 +58,11 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        botaoCadastrar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        botaoCadastrar.setText("Cadastre-se");
-        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        botaoDeCadastro.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        botaoDeCadastro.setText("Cadastre-se");
+        botaoDeCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrarActionPerformed(evt);
+                botaoDeCadastroActionPerformed(evt);
             }
         });
 
@@ -91,9 +91,10 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(botaoEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUSuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(botaoDeCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtUSuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(25, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -118,7 +119,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botaoEntrar)
-                    .addComponent(botaoCadastrar))
+                    .addComponent(botaoDeCadastro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(25, 25, 25))
@@ -132,9 +133,9 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
-    private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
+    private void botaoDeCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeCadastroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoCadastrarActionPerformed
+    }//GEN-LAST:event_botaoDeCadastroActionPerformed
 
     private void txtUSuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUSuarioActionPerformed
         // TODO add your handling code here:
@@ -176,7 +177,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton botaoCadastrar;
+    private javax.swing.JToggleButton botaoDeCadastro;
     private javax.swing.JToggleButton botaoEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
