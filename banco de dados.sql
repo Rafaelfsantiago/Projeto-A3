@@ -3,10 +3,11 @@ USE DB_BITFLY;
 
 CREATE TABLE TB_USUARIO(
 	codigo INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(200),
+	usuario VARCHAR(200),
     fone VARCHAR(200),
     email VARCHAR(200),
-    cpf_cnpj VARCHAR(200)
+    CPF VARCHAR(200),
+    senha VARCHAR(200)
 );
 
 CREATE TABLE TB_EVENTOS(
@@ -25,5 +26,6 @@ CREATE TABLE TB_PATROCINADORES(
     contato VARCHAR (200)
 );
 
+select * from TB_USUARIO;
 
 
