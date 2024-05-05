@@ -4,6 +4,8 @@
  */
 package com.mycompany.bitfly;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rafae
@@ -33,7 +35,7 @@ public class TelaLogin extends javax.swing.JFrame {
         botaoEntrar = new javax.swing.JToggleButton();
         botaoDeCadastro = new javax.swing.JToggleButton();
         txtSenha = new javax.swing.JPasswordField();
-        txtUSuario = new javax.swing.JFormattedTextField();
+        txtUsuario = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,9 +68,9 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        txtUSuario.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUSuarioActionPerformed(evt);
+                txtUsuarioActionPerformed(evt);
             }
         });
 
@@ -93,7 +95,7 @@ public class TelaLogin extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(botaoDeCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtUSuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                                 .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(25, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -111,7 +113,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtUSuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -130,16 +132,21 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
-        // TODO add your handling code here:
+        if(txtUsuario.getText().equals("user") && new String (txtSenha.getPassword()).equals("1234")){
+            TelaInicial TelaInicial = new TelaInicial();
+            TelaInicial.setVisible(true);      
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuário/CPF ou Senha inválida.");
+        }
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void botaoDeCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDeCadastroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoDeCadastroActionPerformed
 
-    private void txtUSuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUSuarioActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUSuarioActionPerformed
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +192,6 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField txtSenha;
-    private javax.swing.JFormattedTextField txtUSuario;
+    private javax.swing.JFormattedTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
