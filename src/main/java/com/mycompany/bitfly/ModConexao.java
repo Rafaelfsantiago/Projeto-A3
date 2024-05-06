@@ -11,25 +11,22 @@ import java.sql.*;
  * @author rafae
  */
 public class ModConexao {
-
-    private String usuario = "root";
-    private String senha = "admin";
-    private String host = "localhost";
-    private String porta = "3306";
-    private String bd = "TB_USUARIO";
     
-    public Connection obtemConexao (){
+  public static Connection conector(){
+    java.sql.Connection conexao = null;
+    
     try{
-        Connection c = DriverManager.getConnection(
-        "jdbc:mysql://" + host + ":" + porta + "/" + bd,
-        usuario,
-        senha
-    );
-        return c;
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         conexao = DriverManager.getConnection(
+        "jdbc:mysql://localhost:3306/DB_BITFLY",
+        "root", "admin");
+        return conexao;
     }catch (Exception e){
-        e.printStackTrace();
+        System.out.println(e);
         return null;
     }
+    
   }
+
 }
 
