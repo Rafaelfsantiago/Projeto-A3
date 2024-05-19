@@ -4,9 +4,7 @@ USE DB_BITFLY;
 CREATE TABLE TB_USUARIO(
 	codigo INT PRIMARY KEY AUTO_INCREMENT,
 	usuario VARCHAR(200),
-    fone VARCHAR(200),
     email VARCHAR(200),
-    CPF VARCHAR(200),
     senha VARCHAR(200)
 );
 
@@ -15,17 +13,16 @@ CREATE TABLE TB_EVENTOS(
     empresa VARCHAR(200),
     dia VARCHAR (200),
     horario VARCHAR (200),
-    lugar VARCHAR (200)
+    lugar VARCHAR (200),
+    cnpj VARCHAR (200)
 );
 
-CREATE TABLE TB_PATROCINADORES(
-	codigo INT PRIMARY KEY AUTO_INCREMENT,
-    empresa VARCHAR(200),
-    valor VARCHAR (200),
-    cnpj VARCHAR (200),
-    contato VARCHAR (200)
-);
+SELECT * FROM TB_USUARIO;
+INSERT INTO TB_USUARIO (usuario, email, senha) VALUES ();
 
-select * from TB_USUARIO;
+ SET GLOBAL time_zone = '-3:00'
+ 
 
+ 
+ 
 
