@@ -11,7 +11,6 @@ import com.mycompany.telas.TelaLogin;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-
 /**
  *
  * @author rafae

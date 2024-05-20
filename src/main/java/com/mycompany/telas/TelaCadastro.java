@@ -162,7 +162,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         this.txtCadastroUsuario = txtCadastroUsuario;
     }
 
-    
     /**
      * @param args the command line arguments
      */

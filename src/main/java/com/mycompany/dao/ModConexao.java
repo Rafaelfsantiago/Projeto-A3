@@ -13,7 +13,6 @@ import java.sql.*;
  */
 
 public class ModConexao {
-    
    public Connection getConnection() throws SQLException{
        Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_BITFLY", "root", "admin");
        return conexao;

@@ -39,6 +39,5 @@ public class LoginDAO {
             JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
         }
         conexao.close(); 
-     }
-     
+     }    
 }

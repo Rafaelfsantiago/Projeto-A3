@@ -72,6 +72,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         TelaCadastroEvento TelaCadastroEvento = new TelaCadastroEvento();
         TelaCadastroEvento.setVisible(true);
+        
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
