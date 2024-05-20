@@ -4,11 +4,12 @@
  */
 package com.mycompany.dao;
 
-import com.mycompany.telas.TelaInicial;
+import com.mycompany.telas.TelaInicialAdmin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author rafae
@@ -30,12 +31,14 @@ public class LoginDAO {
         PreparedStatement statement = conexao.prepareStatement(sql);
         ResultSet rs = statement.executeQuery();
         
+        
         if(rs.next()){
-            TelaInicial TelaInicial = new TelaInicial();
+            TelaInicialAdmin TelaInicial = new TelaInicialAdmin();
             TelaInicial.setVisible(true);
         }else {
-            System.out.println( "Usuário ou senha incorreta");
+            JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
         }
-        conexao.close();   
+        conexao.close(); 
      }
+     
 }

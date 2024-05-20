@@ -33,7 +33,6 @@ public class LoginController {
         LoginDAO login = new LoginDAO();
         login.Login(view.getTxtUsuario().getText(), view.getTxtSenha().getText());
         
-  
     }
     
 }
