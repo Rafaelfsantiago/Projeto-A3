@@ -32,7 +32,6 @@ public class LoginController {
         Connection conexao = new ModConexao().getConnection();
         LoginDAO login = new LoginDAO();
         login.Login(view.getTxtUsuario().getText(), view.getTxtSenha().getText());
-        
     }
     
 }
