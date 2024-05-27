@@ -24,6 +24,7 @@ public class LoginDAO {
         statement.execute();
         conexao.close();   
     }
+     
      public void Login(String usuario, String senha) throws SQLException{
          Connection conexao = new ModConexao().getConnection();
         String sql = "SELECT usuario, senha FROM TB_USUARIO WHERE usuario = '"+usuario+"' AND senha = '"+senha+"'";
@@ -39,5 +40,22 @@ public class LoginDAO {
             JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
         }
         conexao.close(); 
-     }    
+     }
+     
+     public void cadastrarEvento(String empresa, String dia, String horario, String lugar, String cnpj) throws SQLException {
+        Connection conexao = new ModConexao().getConnection();
+        String sql = "INSERT INTO TB_EVENTOS( empresa, dia, horario, lugar, cnpj) VALUES ('"+empresa+"','"+dia+"','"+horario+"','"+lugar+"','"+cnpj+"')";
+        System.out.println(sql);
+        PreparedStatement statement = conexao.prepareStatement(sql);
+        statement.execute();
+        conexao.close();   
+    }
+
+    public void cadastrarEvento(String text, String text0, String text1, String text2, String text3, String text4, String text5) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void cadastrarEvento(String text, String text0, String text1, String text2) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

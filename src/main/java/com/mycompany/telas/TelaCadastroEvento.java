@@ -4,6 +4,13 @@
  */
 package com.mycompany.telas;
 
+import com.mycompany.controller.LoginController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author rafae
@@ -27,17 +34,17 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtCadastroEmpresa = new javax.swing.JFormattedTextField();
         txtCadastroHorario = new javax.swing.JFormattedTextField();
         txtCadastroCnpj = new javax.swing.JFormattedTextField();
-        txtCadastroLocal = new javax.swing.JFormattedTextField();
+        txtCadastroLugar = new javax.swing.JFormattedTextField();
         botaoCadastrarEvento = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtCadastroData = new javax.swing.JFormattedTextField();
+        txtCadastroDia = new javax.swing.JFormattedTextField();
+        txtCadastroEmpresa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +75,12 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
 
         jLabel6.setText("Data:");
 
+        txtCadastroEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCadastroEmpresaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,15 +100,15 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
                         .addComponent(botaoCadastrarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtCadastroEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCadastroCnpj))
+                            .addComponent(txtCadastroCnpj, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                            .addComponent(txtCadastroEmpresa))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCadastroData))
-                            .addComponent(txtCadastroLocal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtCadastroDia))
+                            .addComponent(txtCadastroLugar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -108,9 +121,9 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCadastroEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCadastroLocal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtCadastroLugar, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(txtCadastroEmpresa))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -118,7 +131,7 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCadastroCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCadastroData, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCadastroDia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jLabel5)
                 .addGap(8, 8, 8)
@@ -135,13 +148,65 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoCadastrarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarEventoActionPerformed
-      
+        LoginController cadastro = new LoginController();
+        try {
+            cadastro.cadastroEvento(this);
+        } catch (SQLException ex) {
+           
+        }
+        this.setVisible(false);
     }//GEN-LAST:event_botaoCadastrarEventoActionPerformed
 
     private void txtCadastroHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCadastroHorarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCadastroHorarioActionPerformed
 
+    private void txtCadastroEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCadastroEmpresaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCadastroEmpresaActionPerformed
+    
+    public JTextField getTxtCadastroEmpresa() {
+        return txtCadastroEmpresa;
+    }
+
+    public void setTxtCadastroEmpresa(JFormattedTextField txtCadastroEmail) {
+        this.txtCadastroEmpresa = txtCadastroEmpresa;
+    }
+
+    public JFormattedTextField getTxtCadastroDia() {
+        return txtCadastroDia;
+    }
+    
+    public void setTxtCadastroDia(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroDia= txtCadastroDia;
+    }
+    
+    public JFormattedTextField getTxtCadastroHorario() {
+        return txtCadastroHorario;
+    }
+
+    public void setTxtCadastroHorario(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroHorario = txtCadastroHorario;
+    }
+     
+    public JFormattedTextField getTxtCadastroLugar() {
+        return txtCadastroLugar;
+    }
+     
+    public void setTxtCadastroLugar(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroLugar = txtCadastroLugar;
+    }
+    
+    public JFormattedTextField getTxtCadastroCnpj() {
+        return txtCadastroCnpj;
+    }
+
+    public void setTxtCadastroCnpj(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroCnpj = txtCadastroCnpj;
+    }
+    
+    // empresa, dia, horario, lugar, cnpj
+    
     /**
      * @param args the command line arguments
      */
@@ -186,14 +251,18 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JFormattedTextField txtCadastroCnpj;
-    private javax.swing.JFormattedTextField txtCadastroData;
-    private javax.swing.JFormattedTextField txtCadastroEmpresa;
+    private javax.swing.JFormattedTextField txtCadastroDia;
+    private javax.swing.JTextField txtCadastroEmpresa;
     private javax.swing.JFormattedTextField txtCadastroHorario;
-    private javax.swing.JFormattedTextField txtCadastroLocal;
+    private javax.swing.JFormattedTextField txtCadastroLugar;
     // End of variables declaration//GEN-END:variables
 
     
     void SetVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object TxtCadastroEmpresa() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
