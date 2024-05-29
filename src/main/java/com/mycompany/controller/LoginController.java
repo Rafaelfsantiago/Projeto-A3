@@ -4,7 +4,6 @@
  */
 package com.mycompany.controller;
 
-import com.mycompany.dao.CadastroEventoDAO;
 import com.mycompany.dao.LoginDAO;
 import com.mycompany.dao.ModConexao;
 import com.mycompany.telas.TelaCadastro;
@@ -37,7 +36,7 @@ public class LoginController {
 
     public void cadastroEvento(TelaCadastroEvento view) throws SQLException {
        Connection conexao = new ModConexao().getConnection();
-       CadastroEventoDAO cadastro = new CadastroEventoDAO();
+       LoginDAO cadastro = new LoginDAO();
        cadastro.cadastrarEvento(view.getTxtCadastroEmpresa().getText(), view.getTxtCadastroCnpj().getText(), view.getTxtCadastroHorario().getText(), view.getTxtCadastroLugar().getText(), view.getTxtCadastroDia().getText());
       
     }

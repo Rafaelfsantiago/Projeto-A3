@@ -42,4 +42,12 @@ public class LoginDAO {
         conexao.close(); 
      }
      
+     public void cadastrarEvento(String empresa, String dia, String horario, String lugar, String cnpj) throws SQLException {
+        Connection conexao = new ModConexao().getConnection();
+        String sql = "INSERT INTO TB_EVENTOS(empresa, dia, horario, lugar, cnpj) VALUES ('"+empresa+"','"+dia+"','"+horario+"','"+lugar+"','"+cnpj+"')";
+        System.out.println(sql);
+        PreparedStatement statement = conexao.prepareStatement(sql);
+        statement.execute();  
+        conexao.close();        
+     } 
 }
