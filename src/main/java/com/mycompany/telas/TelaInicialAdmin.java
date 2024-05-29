@@ -30,6 +30,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela admin");
 
         jToggleButton1.setText("Cadastrar eventos");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {

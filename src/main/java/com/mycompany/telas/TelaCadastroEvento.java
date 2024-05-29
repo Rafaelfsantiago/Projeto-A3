@@ -47,6 +47,7 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         txtCadastroEmpresa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastro de eventos");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel1.setText("Cadastro de evento:");
@@ -148,10 +149,11 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoCadastrarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarEventoActionPerformed
-        LoginController cadastro = new LoginController();
+ 
         try {
+            LoginController cadastro = new LoginController();
             cadastro.cadastroEvento(this);
-        } catch (SQLException ex) {
+        } catch (SQLException sql) {
            
         }
         this.setVisible(false);
@@ -178,7 +180,7 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     }
     
     public void setTxtCadastroDia(JFormattedTextField txtCadastroUsuario) {
-        this.txtCadastroDia= txtCadastroDia;
+        this.txtCadastroDia = txtCadastroDia;
     }
     
     public JFormattedTextField getTxtCadastroHorario() {
@@ -205,7 +207,6 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         this.txtCadastroCnpj = txtCadastroCnpj;
     }
     
-    // empresa, dia, horario, lugar, cnpj
     
     /**
      * @param args the command line arguments
