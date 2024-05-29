@@ -18,11 +18,10 @@ CREATE TABLE TB_EVENTOS(
 );
 
 SELECT * FROM TB_USUARIO;
+SELECT * FROM TB_EVENTOS;
+
 INSERT INTO TB_USUARIO (usuario, email, senha) VALUES ();
+INSERT INTO TB_EVENTOS(empresa, dia, horario, lugar, cnpj) VALUES ();
 
- SET GLOBAL time_zone = '-3:00'
- 
 
- 
- 
-
+SET GLOBAL time_zone = '-3:00'
