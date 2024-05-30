@@ -16,9 +16,9 @@ import javax.swing.JOptionPane;
  */
 public class LoginDAO {
     
-    public void cadastrarUsuario(String usuario, String email, String senha) throws SQLException {
+    public void cadastrarUsuario(String usuario, String idade, String genero, String email, String cpf, String senha) throws SQLException {
         Connection conexao = new ModConexao().getConnection();
-        String sql = "INSERT INTO TB_USUARIO(usuario, email, senha) VALUES ('"+usuario+"','"+email+"','"+senha+"')";
+        String sql = "INSERT INTO TB_USUARIO(usuario, idade, genero, email, cpf, senha) VALUES ('"+usuario+"','"+idade+"','"+genero+"','"+email+"','"+cpf+"','"+senha+"')";
         System.out.println(sql);
         PreparedStatement statement = conexao.prepareStatement(sql);
         statement.execute();
@@ -27,7 +27,7 @@ public class LoginDAO {
      
      public void Login(String usuario, String senha) throws SQLException{
          Connection conexao = new ModConexao().getConnection();
-        String sql = "SELECT usuario, senha FROM TB_USUARIO WHERE usuario = '"+usuario+"' AND senha = '"+senha+"'";
+        String sql = "SELECT usuario, senha FROM TB_USUARIO WHERE usuario ='"+usuario+"' AND senha ='"+senha+"' ";
         System.out.println(sql);
         PreparedStatement statement = conexao.prepareStatement(sql);
         ResultSet rs = statement.executeQuery();
@@ -42,12 +42,14 @@ public class LoginDAO {
         conexao.close(); 
      }
      
-     public void cadastrarEvento(String empresa, String dia, String horario, String lugar, String cnpj) throws SQLException {
+     public void cadastrarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento) throws SQLException {
         Connection conexao = new ModConexao().getConnection();
-        String sql = "INSERT INTO TB_EVENTOS(empresa, dia, horario, lugar, cnpj) VALUES ('"+empresa+"','"+dia+"','"+horario+"','"+lugar+"','"+cnpj+"')";
+        String sql = "INSERT INTO TB_EVENTOS(empresa, data_evento, horario_inicio, horario_termino, desc_evento) VALUES ('"+empresa+"','"+data_evento+"','"+horario_inicio+"','"+horario_termino+"','"+desc_evento+"')";
         System.out.println(sql);
         PreparedStatement statement = conexao.prepareStatement(sql);
         statement.execute();  
-        conexao.close();        
+        conexao.close();  
+        
+        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
      } 
 }

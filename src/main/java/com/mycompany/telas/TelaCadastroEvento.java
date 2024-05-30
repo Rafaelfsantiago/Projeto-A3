@@ -6,9 +6,8 @@ package com.mycompany.telas;
 
 import com.mycompany.controller.LoginController;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -34,17 +33,18 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtCadastroHorario = new javax.swing.JFormattedTextField();
-        txtCadastroCnpj = new javax.swing.JFormattedTextField();
-        txtCadastroLugar = new javax.swing.JFormattedTextField();
+        txtCadastroHorario_termino = new javax.swing.JFormattedTextField();
+        txtCadastroHorario_inicio = new javax.swing.JFormattedTextField();
         botaoCadastrarEvento = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtCadastroDia = new javax.swing.JFormattedTextField();
+        txtCadastroData_evento = new javax.swing.JFormattedTextField();
         txtCadastroEmpresa = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtCadastroDesc_evento = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de eventos");
@@ -52,9 +52,9 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel1.setText("Cadastro de evento:");
 
-        txtCadastroHorario.addActionListener(new java.awt.event.ActionListener() {
+        txtCadastroHorario_termino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCadastroHorarioActionPerformed(evt);
+                txtCadastroHorario_terminoActionPerformed(evt);
             }
         });
 
@@ -66,14 +66,19 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Empresa:");
 
-        jLabel3.setText("Local:");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Descrição do evento:");
 
-        jLabel4.setText("CNPJ:");
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("Horário de início:");
 
-        jLabel5.setText("Horario:");
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("Horário de término:");
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Data:");
 
         txtCadastroEmpresa.addActionListener(new java.awt.event.ActionListener() {
@@ -82,66 +87,75 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
             }
         });
 
+        txtCadastroDesc_evento.setColumns(20);
+        txtCadastroDesc_evento.setRows(5);
+        jScrollPane1.setViewportView(txtCadastroDesc_evento);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(183, 183, 183)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtCadastroHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(128, 128, 128)
-                        .addComponent(botaoCadastrarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCadastroCnpj, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                            .addComponent(txtCadastroEmpresa))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCadastroDia))
-                            .addComponent(txtCadastroLugar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtCadastroHorario_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtCadastroEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtCadastroHorario_termino, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel5))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCadastroData_evento, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(botaoCadastrarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(14, 14, 14))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCadastroLugar, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(txtCadastroEmpresa))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtCadastroCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCadastroDia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jLabel5)
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCadastroHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(botaoCadastrarEvento)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                        .addComponent(jLabel2)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtCadastroEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtCadastroData_evento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtCadastroHorario_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addGap(8, 8, 8)
+                        .addComponent(txtCadastroHorario_termino, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1))
+                .addGap(18, 18, 18)
+                .addComponent(botaoCadastrarEvento)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,9 +173,9 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_botaoCadastrarEventoActionPerformed
 
-    private void txtCadastroHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCadastroHorarioActionPerformed
+    private void txtCadastroHorario_terminoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCadastroHorario_terminoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCadastroHorarioActionPerformed
+    }//GEN-LAST:event_txtCadastroHorario_terminoActionPerformed
 
     private void txtCadastroEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCadastroEmpresaActionPerformed
         // TODO add your handling code here:
@@ -175,36 +189,36 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         this.txtCadastroEmpresa = txtCadastroEmpresa;
     }
 
-    public JFormattedTextField getTxtCadastroDia() {
-        return txtCadastroDia;
+    public JFormattedTextField getTxtCadastroData_evento() {
+        return txtCadastroData_evento;
     }
     
-    public void setTxtCadastroDia(JFormattedTextField txtCadastroUsuario) {
-        this.txtCadastroDia = txtCadastroDia;
+    public void setTxtCadastroData_evento(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroData_evento = txtCadastroData_evento;
     }
     
-    public JFormattedTextField getTxtCadastroHorario() {
-        return txtCadastroHorario;
+    public JFormattedTextField getTxtCadastroHorario_termino() {
+        return txtCadastroHorario_termino;
     }
 
-    public void setTxtCadastroHorario(JFormattedTextField txtCadastroUsuario) {
-        this.txtCadastroHorario = txtCadastroHorario;
+    public void setTxtCadastroHorario_termino(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroHorario_termino = txtCadastroHorario_termino;
     }
      
-    public JFormattedTextField getTxtCadastroLugar() {
-        return txtCadastroLugar;
+    public JTextArea getTxtCadastroDesc_evento() {
+        return txtCadastroDesc_evento;
     }
      
-    public void setTxtCadastroLugar(JFormattedTextField txtCadastroUsuario) {
-        this.txtCadastroLugar = txtCadastroLugar;
+    public void setTxtCadastroDesc_evento(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroDesc_evento = txtCadastroDesc_evento;
     }
     
-    public JFormattedTextField getTxtCadastroCnpj() {
-        return txtCadastroCnpj;
+    public JFormattedTextField getTxtCadastroHorario_inicio() {
+        return txtCadastroHorario_inicio;
     }
 
-    public void setTxtCadastroCnpj(JFormattedTextField txtCadastroUsuario) {
-        this.txtCadastroCnpj = txtCadastroCnpj;
+    public void setTxtCadastroHorario_inicio(JFormattedTextField txtCadastroUsuario) {
+        this.txtCadastroHorario_inicio = txtCadastroHorario_inicio;
     }
     
     
@@ -251,11 +265,12 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JFormattedTextField txtCadastroCnpj;
-    private javax.swing.JFormattedTextField txtCadastroDia;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JFormattedTextField txtCadastroData_evento;
+    private javax.swing.JTextArea txtCadastroDesc_evento;
     private javax.swing.JTextField txtCadastroEmpresa;
-    private javax.swing.JFormattedTextField txtCadastroHorario;
-    private javax.swing.JFormattedTextField txtCadastroLugar;
+    private javax.swing.JFormattedTextField txtCadastroHorario_inicio;
+    private javax.swing.JFormattedTextField txtCadastroHorario_termino;
     // End of variables declaration//GEN-END:variables
 
     
@@ -263,7 +278,5 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public Object TxtCadastroEmpresa() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
 }

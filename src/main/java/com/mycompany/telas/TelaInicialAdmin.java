@@ -47,7 +47,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(188, Short.MAX_VALUE)
+                .addContainerGap(197, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jToggleButton1)
@@ -59,7 +59,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(139, Short.MAX_VALUE)
+                .addContainerGap(138, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(103, 103, 103)
                 .addComponent(jToggleButton1)

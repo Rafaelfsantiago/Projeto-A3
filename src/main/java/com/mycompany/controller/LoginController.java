@@ -11,7 +11,7 @@ import com.mycompany.telas.TelaCadastroEvento;
 import com.mycompany.telas.TelaLogin;
 import java.sql.Connection;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -23,8 +23,7 @@ public class LoginController {
         
         Connection conexao = new ModConexao().getConnection();
         LoginDAO cadastro = new LoginDAO();
-        cadastro.cadastrarUsuario(view.getTxtCadastroUsuario().getText(),view.getTxtCadastroEmail().getText(), view.getTxtCadastroSenha().getText());  
-  
+        cadastro.cadastrarUsuario(view.getTxtCadastroUsuario().getText(),view.getTxtCadastroEmail().getText(),view.getTxtCadastroCpf().getText(),view.getTxtCadastroGenero().getText(),view.getTxtCadastroIdade().getText(), view.getTxtCadastroSenha().getText());  
     }
     
      public void loginUsuario(TelaLogin view) throws SQLException{
@@ -37,7 +36,6 @@ public class LoginController {
     public void cadastroEvento(TelaCadastroEvento view) throws SQLException {
        Connection conexao = new ModConexao().getConnection();
        LoginDAO cadastro = new LoginDAO();
-       cadastro.cadastrarEvento(view.getTxtCadastroEmpresa().getText(), view.getTxtCadastroCnpj().getText(), view.getTxtCadastroHorario().getText(), view.getTxtCadastroLugar().getText(), view.getTxtCadastroDia().getText());
-      
+       cadastro.cadastrarEvento(view.getTxtCadastroEmpresa().getText(), view.getTxtCadastroData_evento().getText(), view.getTxtCadastroHorario_inicio().getText(), view.getTxtCadastroHorario_termino().getText(), view.getTxtCadastroDesc_evento().getText());
     }
-}
+} 

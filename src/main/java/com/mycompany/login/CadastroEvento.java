@@ -10,15 +10,15 @@ package com.mycompany.login;
  */
 public class CadastroEvento {
  
-    private String empresa, dia, horario, lugar, cnpj;
+    private String  empresa, data_evento, horario_inicio, horario_termino, desc_evento;
     
-    public void CadastrarEvento(String empresa, String dia, String horario, String lugar, String cnpj){
+    public void CadastrarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento){
         
         this.empresa = empresa;
-        this.dia = dia;
-        this.horario = horario;
-        this.lugar = lugar;
-        this.cnpj = cnpj;
+        this.data_evento = data_evento;
+        this.horario_inicio = horario_inicio;
+        this.horario_termino = horario_termino;
+        this.desc_evento = desc_evento;
     }
 
     public String getEmpresa() {
@@ -29,36 +29,37 @@ public class CadastroEvento {
         this.empresa = empresa;
     }
 
-    public String getDia() {
-        return dia;
+    public String getData_evento() {
+        return data_evento;
     }
 
-    public void setDia(String dia) {
-        this.dia = dia;
+    public void setData_evento(String data_evento) {
+        this.data_evento = data_evento;
     }
 
-    public String getHorario() {
-        return horario;
+    public String getHorario_inicio() {
+        return horario_inicio;
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
+    public void setHorario_inicio(String horario_inicio) {
+        this.horario_inicio = horario_inicio;
     }
 
-    public String getLugar() {
-        return lugar;
+    public String getHorario_termino() {
+        return horario_termino;
     }
 
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
+    public void setHorario_termino(String horario_termino) {
+        this.horario_termino = horario_termino;
     }
 
-    public String getCnpj() {
-        return cnpj;
+    public String getDesc_evento() {
+        return desc_evento;
     }
 
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+    public void setDesc_evento(String desc_evento) {
+        this.desc_evento = desc_evento;
     }
+
             
 }

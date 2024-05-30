@@ -4,11 +4,9 @@
  */
 package com.mycompany.dao;
 
-
 import java.sql.*;
 
 /**
- *
  * @author rafae
  */
 
@@ -18,5 +16,3 @@ public class ModConexao {
        return conexao;
    }   
 }
-       
-   
