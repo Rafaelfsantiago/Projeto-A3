@@ -4,6 +4,7 @@
  */
 package com.mycompany.dao;
 
+import com.mycompany.telas.TelaInicial;
 import com.mycompany.telas.TelaInicialAdmin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,7 +35,7 @@ public class LoginDAO {
         
         
         if(rs.next()){
-            TelaInicialAdmin TelaInicial = new TelaInicialAdmin();
+            TelaInicial TelaInicial = new TelaInicial();
             TelaInicial.setVisible(true);
         }else {
             JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
