@@ -8,13 +8,8 @@ CREATE TABLE TB_USUARIO(
     genero VARCHAR(200),
     email VARCHAR(200),
     cpf VARCHAR(200),
-    senha VARCHAR(200)
-);
-
-CREATE TABLE TB_ADMIN(
-	codigo INT PRIMARY KEY AUTO_INCREMENT,
-	usuario VARCHAR(200),
-    senha VARCHAR(200)
+    senha VARCHAR(200),
+    tipo VARCHAR(200)
 );
 
 CREATE TABLE TB_EVENTOS(
@@ -27,11 +22,10 @@ CREATE TABLE TB_EVENTOS(
 );
 
 SELECT * FROM TB_USUARIO;
-SELECT * FROM TB_ADMIN;
 SELECT * FROM TB_EVENTOS;
 
+
 INSERT INTO TB_USUARIO(usuario, idade, genero, email, cpf, senha) VALUES ();
-INSERT INTO TB_ADMIN(usuario, senha) VALUES ('admin','admin');
 INSERT INTO TB_EVENTOS(empresa, data_evento, horario_inicio, horario_termino, desc_evento) VALUES ();
  
 

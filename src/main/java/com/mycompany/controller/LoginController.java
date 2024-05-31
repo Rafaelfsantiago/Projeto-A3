@@ -5,7 +5,7 @@
 package com.mycompany.controller;
 
 import com.mycompany.dao.LoginDAO;
-import com.mycompany.conexao.ModConexao;
+import com.mycompany.dao.ModConexao;
 import com.mycompany.telas.TelaCadastro;
 import com.mycompany.telas.TelaCadastroEvento;
 import com.mycompany.telas.TelaLogin;

@@ -4,7 +4,6 @@
  */
 package com.mycompany.dao;
 
-import com.mycompany.conexao.ModConexao;
 import com.mycompany.telas.TelaInicial;
 import com.mycompany.telas.TelaInicialAdmin;
 import java.sql.Connection;
@@ -40,13 +39,7 @@ public class LoginDAO {
         }else {
             JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
         }
-      
-        if(rs.next()){
-            TelaInicialAdmin TelaInicialAdmin = new TelaInicialAdmin();
-            TelaInicialAdmin.setVisible(true);
-         }
-        conexao.close(); 
-     }
+    }
      
      public void cadastrarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento) throws SQLException {
         Connection conexao = new ModConexao().getConnection();
