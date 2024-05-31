@@ -4,6 +4,7 @@
  */
 package com.mycompany.dao;
 
+import com.mycompany.conexao.ModConexao;
 import com.mycompany.telas.TelaInicial;
 import com.mycompany.telas.TelaInicialAdmin;
 import java.sql.Connection;
@@ -27,12 +28,11 @@ public class LoginDAO {
     }
      
      public void Login(String usuario, String senha) throws SQLException{
-         Connection conexao = new ModConexao().getConnection();
+        Connection conexao = new ModConexao().getConnection();
         String sql = "SELECT usuario, senha FROM TB_USUARIO WHERE usuario ='"+usuario+"' AND senha ='"+senha+"' ";
         System.out.println(sql);
         PreparedStatement statement = conexao.prepareStatement(sql);
         ResultSet rs = statement.executeQuery();
-        
         
         if(rs.next()){
             TelaInicial TelaInicial = new TelaInicial();
@@ -40,6 +40,11 @@ public class LoginDAO {
         }else {
             JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
         }
+      
+        if(rs.next()){
+            TelaInicialAdmin TelaInicialAdmin = new TelaInicialAdmin();
+            TelaInicialAdmin.setVisible(true);
+         }
         conexao.close(); 
      }
      
