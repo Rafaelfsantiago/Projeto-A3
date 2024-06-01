@@ -6,8 +6,6 @@ package com.mycompany.telas;
 
 import com.mycompany.controller.LoginController;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPasswordField;
 

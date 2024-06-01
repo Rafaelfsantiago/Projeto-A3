@@ -40,7 +40,7 @@ public class LoginDAO {
             JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
         }
     }
-     
+    
      public void cadastrarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento) throws SQLException {
         Connection conexao = new ModConexao().getConnection();
         String sql = "INSERT INTO TB_EVENTOS(empresa, data_evento, horario_inicio, horario_termino, desc_evento) VALUES ('"+empresa+"','"+data_evento+"','"+horario_inicio+"','"+horario_termino+"','"+desc_evento+"')";
