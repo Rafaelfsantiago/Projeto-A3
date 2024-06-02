@@ -5,7 +5,6 @@
 package com.mycompany.dao;
 
 import com.mycompany.telas.TelaInicial;
-import com.mycompany.telas.TelaInicialAdmin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,7 +22,9 @@ public class LoginDAO {
         System.out.println(sql);
         PreparedStatement statement = conexao.prepareStatement(sql);
         statement.execute();
-        conexao.close();   
+        conexao.close();  
+        
+        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
     }
      
      public void Login(String usuario, String senha) throws SQLException{
@@ -32,18 +33,27 @@ public class LoginDAO {
         System.out.println(sql);
         PreparedStatement statement = conexao.prepareStatement(sql);
         ResultSet rs = statement.executeQuery();
-        
-        if(rs.next()){
-               TelaInicialAdmin TelaInicialAdmin = new TelaInicialAdmin();
-                TelaInicialAdmin.setVisible(true);
-             }else{
-                JOptionPane.showMessageDialog( null, "Usuário ou senha incorreta");
-             }
+         
+        if(rs.next()){ 
             
+           boolean tipo = rs.getBoolean("tipo");
+           
+            
+            if ("admin".equals(tipo)){
+                TelaInicial TelaInicial = new TelaInicial();
+                TelaInicial.setVisible(true); 
+                TelaInicial.menuCadEventos.setEnabled(true);
+            }else{
+                TelaInicial TelaInicial = new TelaInicial();
+                TelaInicial.setVisible(true); 
+                TelaInicial.menuCadEventos.setEnabled(false);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário/senha incorreto!");
         }
-    
-  
-     
+    }
+      
+
      public void cadastrarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento) throws SQLException {
         Connection conexao = new ModConexao().getConnection();
         String sql = "INSERT INTO TB_EVENTOS(empresa, data_evento, horario_inicio, horario_termino, desc_evento) VALUES ('"+empresa+"','"+data_evento+"','"+horario_inicio+"','"+horario_termino+"','"+desc_evento+"')";

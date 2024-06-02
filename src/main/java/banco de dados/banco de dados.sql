@@ -9,7 +9,7 @@ CREATE TABLE TB_USUARIO(
     email VARCHAR(200),
     cpf VARCHAR(200),
     senha VARCHAR(200),
-    tipo VARCHAR(200)
+    tipo VARCHAR(200)  CHECK (tipo IN ('true', 'false'))
 );
 
 CREATE TABLE TB_EVENTOS(
@@ -23,8 +23,6 @@ CREATE TABLE TB_EVENTOS(
 
 SELECT * FROM TB_USUARIO;
 SELECT * FROM TB_EVENTOS;
-
-DESCRIBE tb_usuario;
 
 INSERT INTO TB_USUARIO(usuario, idade, genero, email, cpf, senha) VALUES ();
 INSERT INTO TB_EVENTOS(empresa, data_evento, horario_inicio, horario_termino, desc_evento) VALUES ();

@@ -28,21 +28,51 @@ public class TelaInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        lblEmpresa = new javax.swing.JLabel();
+        lblHorario_inicio = new javax.swing.JLabel();
+        lblHorario_termino = new javax.swing.JLabel();
+        lblData = new javax.swing.JLabel();
+        lblDesc_evento = new javax.swing.JLabel();
+        Menu = new javax.swing.JMenuBar();
+        menuCadEventos = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Inicial");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel1.setText("Eventos");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("Eventos ");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        lblEmpresa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEmpresa.setText("Empresa");
+
+        lblHorario_inicio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblHorario_inicio.setText("Horário de inicio");
+
+        lblHorario_termino.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblHorario_termino.setText("Horário de término");
+
+        lblData.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblData.setText("Data");
+
+        lblDesc_evento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDesc_evento.setText("Descrição");
+
+        menuCadEventos.setText("cadastro");
+        menuCadEventos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuCadEventos.setEnabled(false);
+
+        jMenuItem1.setText("Cadastrar evento");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuCadEventos.add(jMenuItem1);
+
+        Menu.add(menuCadEventos);
+
+        setJMenuBar(Menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,26 +81,44 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41)
+                        .addComponent(lblEmpresa)
+                        .addGap(32, 32, 32)
+                        .addComponent(lblHorario_inicio)
+                        .addGap(27, 27, 27)
+                        .addComponent(lblHorario_termino)
+                        .addGap(34, 34, 34)
+                        .addComponent(lblData)
+                        .addGap(35, 35, 35)
+                        .addComponent(lblDesc_evento))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addGap(26, 26, 26)
                         .addComponent(jLabel1)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(83, 83, 83)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmpresa)
+                    .addComponent(lblHorario_inicio)
+                    .addComponent(lblHorario_termino)
+                    .addComponent(lblData)
+                    .addComponent(lblDesc_evento))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        TelaCadastroEvento TelaCadastroEvento = new TelaCadastroEvento();
+        TelaCadastroEvento.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,8 +157,14 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JMenuItem jMenuItem1;
+    public static javax.swing.JLabel lblData;
+    public static javax.swing.JLabel lblDesc_evento;
+    public static javax.swing.JLabel lblEmpresa;
+    public static javax.swing.JLabel lblHorario_inicio;
+    public static javax.swing.JLabel lblHorario_termino;
+    public static javax.swing.JMenu menuCadEventos;
     // End of variables declaration//GEN-END:variables
 }

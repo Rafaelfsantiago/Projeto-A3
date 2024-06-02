@@ -23,7 +23,7 @@ public class LoginController {
         
         Connection conexao = new ModConexao().getConnection();
         LoginDAO cadastro = new LoginDAO();
-        cadastro.cadastrarUsuario(view.getTxtCadastroUsuario().getText(),view.getTxtCadastroEmail().getText(),view.getTxtCadastroCpf().getText(),view.getTxtCadastroGenero().getText(),view.getTxtCadastroIdade().getText(), view.getTxtCadastroSenha().getText());  
+        cadastro.cadastrarUsuario(view.getTxtCadastroUsuario().getText(),view.getTxtCadastroIdade().getText(),view.getTxtCadastroGenero().getText(),view.getTxtCadastroEmail().getText(),view.getTxtCadastroCpf().getText(), view.getTxtCadastroSenha().getText());  
     }
     
      public void loginUsuario(TelaLogin view) throws SQLException{

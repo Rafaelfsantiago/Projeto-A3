@@ -130,7 +130,7 @@ public class TelaLogin extends javax.swing.JFrame {
             login.loginUsuario(this);
            
         } catch (SQLException sql) {
-            
+          
          }
     
     }//GEN-LAST:event_botaoEntrarActionPerformed
