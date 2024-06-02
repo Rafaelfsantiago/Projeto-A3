@@ -4,7 +4,7 @@
  */
 package com.mycompany.telas;
 
-import com.mycompany.controller.LoginController;
+import com.mycompany.controller.Controller;
 import java.sql.SQLException;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextArea;
@@ -45,8 +45,9 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         txtCadastroEmpresa = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtCadastroDesc_evento = new javax.swing.JTextArea();
+        jToggleButton2 = new javax.swing.JToggleButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de eventos");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -94,6 +95,15 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         txtCadastroDesc_evento.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtCadastroDesc_evento);
 
+        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jToggleButton2.setText("Voltar");
+        jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,13 +122,12 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addComponent(txtCadastroHorario_termino, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(txtCadastroEmpresa))
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(82, 82, 82)
-                                    .addComponent(botaoCadastrarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botaoCadastrarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtCadastroData_evento)
                                     .addComponent(jLabel3)
@@ -157,7 +166,9 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtCadastroHorario_termino, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(botaoCadastrarEvento)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botaoCadastrarEvento)
+                    .addComponent(jToggleButton2))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -168,7 +179,7 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private void botaoCadastrarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarEventoActionPerformed
  
         try {
-            LoginController cadastro = new LoginController();
+            Controller cadastro = new Controller();
             cadastro.cadastroEvento(this);
         } catch (SQLException sql) {
            
@@ -183,6 +194,11 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private void txtCadastroEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCadastroEmpresaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCadastroEmpresaActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+            TelaInicial TelaInicial = new TelaInicial();
+            TelaInicial.setVisible(true);
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
     
     public JTextField getTxtCadastroEmpresa() {
         return txtCadastroEmpresa;
@@ -269,6 +285,7 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JFormattedTextField txtCadastroData_evento;
     private javax.swing.JTextArea txtCadastroDesc_evento;
     private javax.swing.JTextField txtCadastroEmpresa;

@@ -29,17 +29,16 @@ public class LoginDAO {
      
      public void Login(String usuario, String senha) throws SQLException{
         Connection conexao = new ModConexao().getConnection();
-        String sql = "SELECT usuario, senha FROM TB_USUARIO WHERE usuario ='"+usuario+"' AND senha ='"+senha+"' ";
+        String sql = "SELECT usuario, senha, tipo FROM TB_USUARIO WHERE usuario ='"+usuario+"' AND senha ='"+senha+"' ";
         System.out.println(sql);
         PreparedStatement statement = conexao.prepareStatement(sql);
         ResultSet rs = statement.executeQuery();
          
         if(rs.next()){ 
             
-           boolean tipo = rs.getBoolean("tipo");
+           String tipo = rs.getString("tipo");
            
-            
-            if ("admin".equals(tipo)){
+            if ("true".equals(tipo)){
                 TelaInicial TelaInicial = new TelaInicial();
                 TelaInicial.setVisible(true); 
                 TelaInicial.menuCadEventos.setEnabled(true);
@@ -51,17 +50,5 @@ public class LoginDAO {
         } else {
             JOptionPane.showMessageDialog(null, "Usuário/senha incorreto!");
         }
-    }
-      
-
-     public void cadastrarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento) throws SQLException {
-        Connection conexao = new ModConexao().getConnection();
-        String sql = "INSERT INTO TB_EVENTOS(empresa, data_evento, horario_inicio, horario_termino, desc_evento) VALUES ('"+empresa+"','"+data_evento+"','"+horario_inicio+"','"+horario_termino+"','"+desc_evento+"')";
-        System.out.println(sql);
-        PreparedStatement statement = conexao.prepareStatement(sql);
-        statement.execute();  
-        conexao.close();  
-        
-        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
-     } 
-}
+     }
+  }

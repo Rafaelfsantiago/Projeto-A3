@@ -4,7 +4,7 @@
  */
 package com.mycompany.telas;
 
-import com.mycompany.controller.LoginController;
+import com.mycompany.controller.Controller;
 import java.sql.SQLException;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPasswordField;
@@ -126,7 +126,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
        
         try {
-            LoginController login = new LoginController();
+            Controller login = new Controller();
             login.loginUsuario(this);
            
         } catch (SQLException sql) {
@@ -140,7 +140,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
-         TelaCadastro TelaCadastro = new TelaCadastro();
+            TelaCadastro TelaCadastro = new TelaCadastro();
             TelaCadastro.setVisible(true);
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 

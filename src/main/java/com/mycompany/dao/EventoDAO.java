@@ -6,6 +6,7 @@ package com.mycompany.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -24,5 +25,13 @@ public class EventoDAO {
         
         JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
      } 
+    
+    public void visualizarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento) throws SQLException{
+        Connection conexao = new ModConexao().getConnection();
+        String sql = "SELECT usuario, senha FROM TB_USUARIO WHERE '"+empresa+"', '"+data_evento+"','"+horario_inicio+"','"+horario_termino+"', '"+desc_evento+"'";
+        System.out.println(sql);
+        PreparedStatement statement = conexao.prepareStatement(sql);
+        ResultSet rs = statement.executeQuery();
+    }
     
 }

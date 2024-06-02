@@ -4,10 +4,8 @@
  */
 package com.mycompany.telas;
 
-import com.mycompany.controller.LoginController;
+import com.mycompany.controller.Controller;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPasswordField;
 
@@ -47,8 +45,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         txtCadastroIdade = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de cadastro");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -86,6 +85,14 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Idade:");
+
+        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jToggleButton1.setText("Voltar");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,7 +132,8 @@ public class TelaCadastro extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addComponent(txtCadastroGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(botaoCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(45, 45, 45))))
         );
@@ -165,7 +173,9 @@ public class TelaCadastro extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtCadastroIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
-                .addComponent(botaoCadastrarUsuario)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoCadastrarUsuario)
+                    .addComponent(jToggleButton1))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -180,13 +190,19 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void botaoCadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarUsuarioActionPerformed
     
        try {
-           LoginController cadastro = new LoginController();
+           Controller cadastro = new Controller();
             cadastro.cadastroUsuario(this);
        } catch(SQLException sql){
            
        }
         this.setVisible(false);
     }//GEN-LAST:event_botaoCadastrarUsuarioActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+            TelaLogin TelaLogin = new TelaLogin();
+            TelaLogin.setVisible(true);
+            
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     public JFormattedTextField getTxtCadastroEmail() {
         return txtCadastroEmail;
@@ -279,6 +295,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JFormattedTextField txtCadastroCpf;
     private javax.swing.JFormattedTextField txtCadastroEmail;
     private javax.swing.JFormattedTextField txtCadastroGenero;

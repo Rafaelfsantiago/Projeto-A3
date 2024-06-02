@@ -37,7 +37,7 @@ public class TelaInicial extends javax.swing.JFrame {
         menuCadEventos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Inicial");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -81,34 +81,34 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(lblEmpresa)
-                        .addGap(32, 32, 32)
-                        .addComponent(lblHorario_inicio)
-                        .addGap(27, 27, 27)
-                        .addComponent(lblHorario_termino)
-                        .addGap(34, 34, 34)
-                        .addComponent(lblData)
-                        .addGap(35, 35, 35)
-                        .addComponent(lblDesc_evento))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel1)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHorario_inicio)
+                            .addComponent(lblEmpresa)
+                            .addComponent(lblHorario_termino)
+                            .addComponent(lblData)
+                            .addComponent(lblDesc_evento))))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
+                .addGap(23, 23, 23)
+                .addComponent(lblEmpresa)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmpresa)
-                    .addComponent(lblHorario_inicio)
-                    .addComponent(lblHorario_termino)
-                    .addComponent(lblData)
-                    .addComponent(lblDesc_evento))
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addComponent(lblHorario_inicio)
+                .addGap(18, 18, 18)
+                .addComponent(lblHorario_termino)
+                .addGap(18, 18, 18)
+                .addComponent(lblData)
+                .addGap(18, 18, 18)
+                .addComponent(lblDesc_evento)
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         pack();
@@ -167,4 +167,48 @@ public class TelaInicial extends javax.swing.JFrame {
     public static javax.swing.JLabel lblHorario_termino;
     public static javax.swing.JMenu menuCadEventos;
     // End of variables declaration//GEN-END:variables
+
+    public String getLblEmpresa() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getLblData() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getLblHorario_inicio() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getLblHorario_termino() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getLblDesc_evento() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getTxtCadastroEmpresa() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getTxtCadastroData_evento() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getTxtCadastroHorario_inicio() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getTxtCadastroHorario_termino() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getTxtCadastroDesc_evento() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getlblEmpresa() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
