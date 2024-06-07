@@ -128,11 +128,12 @@ public class TelaLogin extends javax.swing.JFrame {
         try {
             Controller login = new Controller();
             login.loginUsuario(this);
+            
            
         } catch (SQLException sql) {
           
          }
-    
+           
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed

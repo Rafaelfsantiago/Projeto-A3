@@ -41,11 +41,13 @@ public class LoginDAO {
             if ("true".equals(tipo)){
                 TelaInicial TelaInicial = new TelaInicial();
                 TelaInicial.setVisible(true); 
-                TelaInicial.menuCadEventos.setEnabled(true);
+                 TelaInicial.menuCadEventos.setEnabled(true);
+                
             }else{
                 TelaInicial TelaInicial = new TelaInicial();
                 TelaInicial.setVisible(true); 
-                TelaInicial.menuCadEventos.setEnabled(false);
+                 TelaInicial.menuCadEventos.setEnabled(false);
+               
             }
         } else {
             JOptionPane.showMessageDialog(null, "Usuário/senha incorreto!");

@@ -47,7 +47,7 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         txtCadastroDesc_evento = new javax.swing.JTextArea();
         jToggleButton2 = new javax.swing.JToggleButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de eventos");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -181,6 +181,10 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
         try {
             Controller cadastro = new Controller();
             cadastro.cadastroEvento(this);
+            TelaInicial TelaInicial = new TelaInicial();
+            TelaInicial.setVisible(true);
+            TelaInicial.menuCadEventos.setEnabled(true);
+            this.dispose();
         } catch (SQLException sql) {
            
         }
@@ -198,6 +202,8 @@ public class TelaCadastroEvento extends javax.swing.JFrame {
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
             TelaInicial TelaInicial = new TelaInicial();
             TelaInicial.setVisible(true);
+            TelaInicial.menuCadEventos.setEnabled(true);
+            this.dispose();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
     
     public JTextField getTxtCadastroEmpresa() {

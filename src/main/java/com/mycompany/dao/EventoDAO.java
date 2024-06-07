@@ -4,6 +4,8 @@
  */
 package com.mycompany.dao;
 
+import com.mycompany.login.VisualizarEvento;
+import com.mycompany.telas.TelaInicial;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,13 +27,31 @@ public class EventoDAO {
         
         JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
      } 
+
     
-    public void visualizarEvento(String empresa, String data_evento, String horario_inicio, String horario_termino, String desc_evento) throws SQLException{
-        Connection conexao = new ModConexao().getConnection();
-        String sql = "SELECT usuario, senha FROM TB_USUARIO WHERE '"+empresa+"', '"+data_evento+"','"+horario_inicio+"','"+horario_termino+"', '"+desc_evento+"'";
-        System.out.println(sql);
-        PreparedStatement statement = conexao.prepareStatement(sql);
-        ResultSet rs = statement.executeQuery();
+        public VisualizarEvento[] obterEvento() throws SQLException {
+        String sql = "select * from TB_EVENTOS;";
+        try (Connection conexao = new ModConexao().getConnection();
+             PreparedStatement ps = conexao.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY); 
+                ResultSet rs = ps.executeQuery();) {
+                
+            int totalDeEventos = rs.last() ? rs.getRow(): 0;
+            VisualizarEvento[] eventos = new VisualizarEvento[totalDeEventos];
+            rs.beforeFirst();
+            int contador = 0;
+                while (rs.next()) {
+                    
+                    String empresa = rs.getString("empresa");
+                    String data_evento = rs.getString("data_evento");
+                    String horario_inicio = rs.getString("horario_inicio");
+                    String horario_termino = rs.getString("horario_termino");
+                    String desc_evento = rs.getString("desc_evento");
+                    
+
+                    eventos[contador++] = new VisualizarEvento(empresa, data_evento, horario_inicio, horario_termino, desc_evento);
+                }
+                 return eventos ;
+            }
     }
-    
 }
+

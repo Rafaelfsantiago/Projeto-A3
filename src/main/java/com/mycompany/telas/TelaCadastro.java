@@ -201,7 +201,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
             TelaLogin TelaLogin = new TelaLogin();
             TelaLogin.setVisible(true);
-            
+            this.dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     public JFormattedTextField getTxtCadastroEmail() {
