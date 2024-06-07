@@ -5,6 +5,7 @@
 package com.mycompany.dao;
 
 import com.mycompany.telas.TelaInicial;
+import com.mycompany.telas.TelaLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -41,7 +42,7 @@ public class LoginDAO {
             if ("true".equals(tipo)){
                 TelaInicial TelaInicial = new TelaInicial();
                 TelaInicial.setVisible(true); 
-                 TelaInicial.menuCadEventos.setEnabled(true);
+                 TelaInicial.menuCadEventos.setEnabled(true);                
                 
             }else{
                 TelaInicial TelaInicial = new TelaInicial();

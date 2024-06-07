@@ -20,7 +20,31 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     
     public TelaInicial() {
-        initComponents(); 
+        initComponents();
+       setLocationRelativeTo(null);
+        buscarEvento();
+        jComboBox1.addActionListener((e) -> preencherCampos());
+    }
+    
+    
+     private void buscarEvento() {
+        try {
+            EventoDAO EventoDAO = new EventoDAO();
+            VisualizarEvento[] evento = EventoDAO.obterEvento();
+            jComboBox1.setModel(new DefaultComboBoxModel(evento));
+            preencherCampos();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void preencherCampos() {
+        VisualizarEvento selecionado = (VisualizarEvento)jComboBox1.getSelectedItem();
+        lblEmpresa.setText("" + selecionado.getEmpresa());
+        lblData_evento.setText(selecionado.getData_evento());
+        lblHorario_inicio.setText(selecionado.getHorario_inicio());
+        lblHorario_termino.setText(selecionado.getHorario_termino());
+        lblDesc_evento.setText(selecionado.getDesc_evento());
     }
     
     /**
