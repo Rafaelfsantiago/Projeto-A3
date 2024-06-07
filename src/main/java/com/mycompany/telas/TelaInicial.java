@@ -1,9 +1,13 @@
-package com.mycompany.telas;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package com.mycompany.telas;
+
+import com.mycompany.dao.EventoDAO;
+import com.mycompany.login.VisualizarEvento;
+import java.sql.SQLException;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -12,12 +16,13 @@ package com.mycompany.telas;
 public class TelaInicial extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaInicial
+     * Creates new form TelaInicial2
      */
+    
     public TelaInicial() {
-        initComponents();
+        initComponents(); 
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,42 +32,45 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         lblEmpresa = new javax.swing.JLabel();
+        lblData_evento = new javax.swing.JLabel();
         lblHorario_inicio = new javax.swing.JLabel();
         lblHorario_termino = new javax.swing.JLabel();
-        lblData = new javax.swing.JLabel();
         lblDesc_evento = new javax.swing.JLabel();
-        Menu = new javax.swing.JMenuBar();
+        jLabel6 = new javax.swing.JLabel();
+        menu = new javax.swing.JMenuBar();
         menuCadEventos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Tela Inicial");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Eventos ");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escolha um evento" }));
 
-        lblEmpresa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEmpresa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblEmpresa.setText("Empresa");
 
-        lblHorario_inicio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblHorario_inicio.setText("Horário de inicio");
+        lblData_evento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblData_evento.setText("Data");
 
-        lblHorario_termino.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblHorario_inicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHorario_inicio.setText("Horário de início");
+
+        lblHorario_termino.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblHorario_termino.setText("Horário de término");
 
-        lblData.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblData.setText("Data");
-
-        lblDesc_evento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblDesc_evento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblDesc_evento.setText("Descrição");
 
-        menuCadEventos.setText("cadastro");
-        menuCadEventos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel6.setText("Eventos");
+
+        menuCadEventos.setText("Cadastro");
         menuCadEventos.setEnabled(false);
 
-        jMenuItem1.setText("Cadastrar evento");
+        jMenuItem1.setText("Cadastro de eventos");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -70,45 +78,57 @@ public class TelaInicial extends javax.swing.JFrame {
         });
         menuCadEventos.add(jMenuItem1);
 
-        Menu.add(menuCadEventos);
+        menu.add(menuCadEventos);
 
-        setJMenuBar(Menu);
+        jMenu2.setText("Opções");
+
+        jMenuItem2.setText("Sair");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        menu.add(jMenu2);
+
+        setJMenuBar(menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblHorario_inicio)
-                            .addComponent(lblEmpresa)
-                            .addComponent(lblHorario_termino)
-                            .addComponent(lblData)
-                            .addComponent(lblDesc_evento))))
-                .addContainerGap(444, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jComboBox1, 0, 239, Short.MAX_VALUE)
+                        .addComponent(lblEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblData_evento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblHorario_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblDesc_evento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblHorario_termino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(23, 23, 23)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(lblEmpresa)
+                .addGap(18, 18, 18)
+                .addComponent(lblData_evento)
                 .addGap(18, 18, 18)
                 .addComponent(lblHorario_inicio)
                 .addGap(18, 18, 18)
                 .addComponent(lblHorario_termino)
                 .addGap(18, 18, 18)
-                .addComponent(lblData)
-                .addGap(18, 18, 18)
                 .addComponent(lblDesc_evento)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pack();
@@ -118,7 +138,15 @@ public class TelaInicial extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         TelaCadastroEvento TelaCadastroEvento = new TelaCadastroEvento();
         TelaCadastroEvento.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        TelaLogin TelaLogin = new TelaLogin();
+        TelaLogin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,29 +174,32 @@ public class TelaInicial extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaInicial().setVisible(true);
-            
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar Menu;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
-    public static javax.swing.JLabel lblData;
-    public static javax.swing.JLabel lblDesc_evento;
-    public static javax.swing.JLabel lblEmpresa;
-    public static javax.swing.JLabel lblHorario_inicio;
-    public static javax.swing.JLabel lblHorario_termino;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JLabel lblData_evento;
+    private javax.swing.JLabel lblDesc_evento;
+    private javax.swing.JLabel lblEmpresa;
+    private javax.swing.JLabel lblHorario_inicio;
+    private javax.swing.JLabel lblHorario_termino;
+    private javax.swing.JMenuBar menu;
     public static javax.swing.JMenu menuCadEventos;
     // End of variables declaration//GEN-END:variables
 
-    public String getLblEmpresa() {
+ public String getLblEmpresa() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
