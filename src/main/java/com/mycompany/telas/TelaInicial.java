@@ -62,6 +62,7 @@ public class TelaInicial extends javax.swing.JFrame {
         lblHorario_inicio = new javax.swing.JLabel();
         lblHorario_termino = new javax.swing.JLabel();
         lblDesc_evento = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
         menuCadEventos = new javax.swing.JMenu();
@@ -70,26 +71,55 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escolha um evento" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 83, 239, -1));
 
         lblEmpresa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEmpresa.setForeground(new java.awt.Color(255, 255, 255));
         lblEmpresa.setText("Empresa");
+        getContentPane().add(lblEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 123, 239, -1));
 
         lblData_evento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblData_evento.setForeground(new java.awt.Color(255, 255, 255));
         lblData_evento.setText("Data");
+        getContentPane().add(lblData_evento, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 161, 239, -1));
 
         lblHorario_inicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHorario_inicio.setForeground(new java.awt.Color(255, 255, 255));
         lblHorario_inicio.setText("Horário de início");
+        getContentPane().add(lblHorario_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 199, 239, -1));
 
         lblHorario_termino.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHorario_termino.setForeground(new java.awt.Color(255, 255, 255));
         lblHorario_termino.setText("Horário de término");
+        getContentPane().add(lblHorario_termino, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 237, 239, -1));
 
         lblDesc_evento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDesc_evento.setForeground(new java.awt.Color(255, 255, 255));
         lblDesc_evento.setText("Descrição");
+        getContentPane().add(lblDesc_evento, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 275, 239, -1));
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 390));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Eventos");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 24, 152, -1));
 
         menuCadEventos.setText("Cadastro");
         menuCadEventos.setEnabled(false);
@@ -117,43 +147,6 @@ public class TelaInicial extends javax.swing.JFrame {
         menu.add(jMenu2);
 
         setJMenuBar(menu);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jComboBox1, 0, 239, Short.MAX_VALUE)
-                        .addComponent(lblEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblData_evento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblHorario_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblDesc_evento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblHorario_termino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(347, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblEmpresa)
-                .addGap(18, 18, 18)
-                .addComponent(lblData_evento)
-                .addGap(18, 18, 18)
-                .addComponent(lblHorario_inicio)
-                .addGap(18, 18, 18)
-                .addComponent(lblHorario_termino)
-                .addGap(18, 18, 18)
-                .addComponent(lblDesc_evento)
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
 
         pack();
         setLocationRelativeTo(null);
@@ -214,6 +207,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblData_evento;
     private javax.swing.JLabel lblDesc_evento;
     private javax.swing.JLabel lblEmpresa;
