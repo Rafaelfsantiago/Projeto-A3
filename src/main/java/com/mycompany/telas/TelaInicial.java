@@ -39,12 +39,14 @@ public class TelaInicial extends javax.swing.JFrame {
     }
     
     private void preencherCampos() {
-        VisualizarEvento selecionado = (VisualizarEvento)jComboBox1.getSelectedItem();
-        lblEmpresa.setText("" + selecionado.getEmpresa());
-        lblData_evento.setText(selecionado.getData_evento());
-        lblHorario_inicio.setText(selecionado.getHorario_inicio());
-        lblHorario_termino.setText(selecionado.getHorario_termino());
-        lblDesc_evento.setText(selecionado.getDesc_evento());
+      VisualizarEvento selecionado = (VisualizarEvento)jComboBox1.getSelectedItem();
+        if(selecionado != null) {
+              lblEmpresa.setText( selecionado.getEmpresa());
+              lblData_evento.setText(selecionado.getData_evento());
+              lblHorario_inicio.setText(selecionado.getHorario_inicio());
+              lblHorario_termino.setText(selecionado.getHorario_termino());
+              lblDesc_evento.setText(selecionado.getDesc_evento());
+        }
     }
     
     /**
@@ -160,9 +162,9 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        TelaLogin TelaLogin = new TelaLogin();
-        TelaLogin.setVisible(true);
+        
         this.dispose();
+        
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
