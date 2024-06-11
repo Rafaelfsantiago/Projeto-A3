@@ -64,8 +64,8 @@ public class TelaInicial extends javax.swing.JFrame {
         lblHorario_inicio = new javax.swing.JLabel();
         lblHorario_termino = new javax.swing.JLabel();
         lblDesc_evento = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         menu = new javax.swing.JMenuBar();
         menuCadEventos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -103,6 +103,11 @@ public class TelaInicial extends javax.swing.JFrame {
         lblDesc_evento.setText("Descrição");
         getContentPane().add(lblDesc_evento, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 275, 239, -1));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Eventos");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 24, 152, -1));
+
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -117,11 +122,6 @@ public class TelaInicial extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 390));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Eventos");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 24, 152, -1));
 
         menuCadEventos.setText("Cadastro");
         menuCadEventos.setEnabled(false);
